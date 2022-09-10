@@ -10,67 +10,6 @@ const transactionHistoryBtn = document.querySelector("#transaction-history");
 const productHistoryBtn = document.querySelector("#product-history");
 const sellProductBtn = document.querySelector("#product-sell");
 
-//form templates
-
-const contactFormTemplate = [
-  { name: "contact_name", title: "Name", type: "text" },
-  { name: "contact_surname", title: "Surname", type: "text" },
-  { name: "contact_balance", title: "Balance", type: "number" },
-];
-const productFormTemplate = [
-  { name: "product_name", title: "Name", type: "text" },
-  { name: "product_quantity", title: "Quantity", type: "number" },
-  { name: "product_price", title: "Price", type: "number" },
-];
-const transferFormTemplate = {
-  title: "Transfer",
-  fields: [
-    {
-      id: "transfer_sender",
-      name: "sender",
-      title: "Sender",
-      type: "select",
-      options: "userlist",
-    },
-    {
-      id: "transfer_receiver",
-      name: "receiver",
-      title: "Receiver",
-      type: "select",
-      options: "userlist",
-    },
-    { id: "transfer_amount", name: "amount", title: "Amount", type: "number" },
-  ],
-  buttonName: "Transfer",
-};
-const salesFormTemplate = {
-  title: "Sales",
-  fields: [
-    {
-      id: "sales_sender",
-      name: "sender",
-      title: "Sender",
-      type: "select",
-      options: "userlist",
-    },
-    {
-      id: "sales_receiver",
-      name: "receiver",
-      title: "Receiver",
-      type: "select",
-      options: "userlist",
-    },
-    {
-      id: "sales_product",
-      name: "product",
-      title: "Product",
-      type: "select",
-      options: "productlist",
-    },
-  ],
-  buttonName: "Sell",
-};
-
 //data state control
 const state = {
   userList: [],
@@ -198,6 +137,7 @@ const handleAddUser = (e) => {
   updateUserTable();
   updateSelectOptions();
 };
+
 const handleAddProduct = (e) => {
   e.preventDefault();
   const productName = document.getElementById("product_name");
@@ -213,6 +153,7 @@ const handleAddProduct = (e) => {
   setState("productList", newProduct);
   updateProductTable();
 };
+
 const handleTransfer = (e) => {
   e.preventDefault();
   const sender = parseInt(document.getElementById("transfer_sender").value);
@@ -248,6 +189,7 @@ const handleTransfer = (e) => {
   updateUserTable();
   updateSelectOptions();
 };
+
 const handleSell = (e) => {
   e.preventDefault();
   const senderId = parseInt(document.getElementById("sales_sender").value);
@@ -314,7 +256,7 @@ productHistoryBtn.addEventListener("click", listProducts);
 sellProductBtn.addEventListener("click", sellProduct);
 
 // const App = () => {
-//   return `<div></div>`;
+
 // };
 
 // (function () {
