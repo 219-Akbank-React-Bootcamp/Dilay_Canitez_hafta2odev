@@ -1,0 +1,13 @@
+#root {
+  max-width: 98vw;
+}
+
+.bottom-section-table {
+  overflow-y: auto;
+  height: 59vh;
+}
+
+.table-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
