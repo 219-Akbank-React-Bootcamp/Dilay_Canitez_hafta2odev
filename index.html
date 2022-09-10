@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Transaction Panel</title>
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href=".src/style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="row">
+        <div class="col-3">
+          <form class="row my-2" id="contact-form"></form>
+        </div>
+        <div class="col-6">
+          <div class="row my-2">
+            <form class="row" id="transfer-form"></form>
+          </div>
+          <div class="row mt-4">
+            <form class="row" id="sales-form"></form>
+          </div>
+        </div>
+        <div class="col-3">
+          <form class="row my-2" id="product-form"></form>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-4 bottom-section-table">
+          <div class="table-buttons">
+            <button id="product-history" class="btn btn-outline-primary btn-sm">
+              Products
+            </button>
+            <button
+              id="transaction-history"
+              class="btn btn-outline-primary btn-sm"
+            >
+              History
+            </button>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Fullname</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody id="user-table"></tbody>
+          </table>
+        </div>
+        <div
+          class="col-4 bottom-section-table bg-light"
+          style="border: 1px solid black"
+          id="history-table-container"
+        >
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>UserId</th>
+                <th>Details</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="history-table"></tbody>
+          </table>
+        </div>
+        <div class="col-4 bottom-section-table">
+          <div class="table-buttons">
+            <button id="product-sell" class="btn btn-outline-primary btn-sm">
+              Sell
+            </button>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="product-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/components.js"></script>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
