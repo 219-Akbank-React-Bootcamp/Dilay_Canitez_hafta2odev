@@ -11,3 +11,9 @@
   display: flex;
   flex-direction: row-reverse;
 }
+.table-hover {
+  cursor: pointer;
+}
+.active-row {
+  background-color: yellow;
+}

@@ -26,9 +26,13 @@ const setState = (name, newState) => {
 //functions
 const selectUser = (id) => {
   state.currentUser = id;
+  userTable.querySelector(".active-row")?.classList.remove("active-row");
+  document.getElementById(id).classList.add("active-row");
 };
 const selectProduct = (id) => {
   state.currentProduct = id;
+  productTable.querySelector(".active-row")?.classList.remove("active-row");
+  document.getElementById(id).classList.add("active-row");
 };
 
 const listTransactionHistory = () => {
@@ -45,7 +49,8 @@ const listTransactionHistory = () => {
     .join(" ");
 };
 const listProducts = () => {
-  const user = state.history.find((x) => x.userId === state.currentUser);
+  const user = state.userList.find((x) => x.id === state.currentUser);
+  console.log(user);
   historyTable.innerHTML = user.products
     .map(
       (product) =>
@@ -255,6 +260,13 @@ transactionHistoryBtn.addEventListener("click", listTransactionHistory);
 productHistoryBtn.addEventListener("click", listProducts);
 sellProductBtn.addEventListener("click", sellProduct);
 
+document.addEventListener("click", function (e) {
+  if (!e.path.find((x) => x.className?.includes("bottom-section"))) {
+    state.currentUser = "";
+    state.currentProduct = "";
+    document.querySelector(".active-row")?.classList.remove("active-row");
+  }
+});
 // const App = () => {
 
 // };
